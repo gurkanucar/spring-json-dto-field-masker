@@ -32,33 +32,33 @@ After I see that, just added some extra options and wrote unit tests.
 **examples**
 ```json
 [
-    {
-        "name": "Gurkan",
-        "idNumber": "1234xxxxx",
-        "accounts": [
-            {
-                "accountName": "account1",
-                "accountNumber": "*****6789101112"
-            },
-            {
-                "accountName": "account2",
-                "accountNumber": "******7899423246"
-            }
-        ]
-    },
-    {
-        "name": "Mehmet",
-        "idNumber": "9876xxxxx",
-        "accounts": [
-            {
-                "accountName": "account3",
-                "accountNumber": "********9101456242"
-            },
-            {
-                "accountName": "account4",
-                "accountNumber": "*********9657765434"
-            }
-        ]
-    }
+  {
+    "name": "Gurkan",
+    "idNumber": "xxxx56789",
+    "accounts": [
+      {
+        "accountName": "account1",
+        "accountNumber": "12345**********"
+      },
+      {
+        "accountName": "account2",
+        "accountNumber": "123456**********"
+      }
+    ]
+  },
+  {
+    "name": "Mehmet",
+    "idNumber": "xxxx54321",
+    "accounts": [
+      {
+        "accountName": "account3",
+        "accountNumber": "12345678**********"
+      },
+      {
+        "accountName": "account4",
+        "accountNumber": "123456789**********"
+      }
+    ]
+  }
 ]
 ```

@@ -34,18 +34,7 @@ public class MaskDataSerializer extends JsonSerializer {
     jsonGenerator.writeString(obfuscatedText);
   }
 
-  private String lastXCharsClear(String text, int value, String replaceChar) {
-    int size = text.length();
-    if (value > size) {
-      throw new IllegalArgumentException("Value cannot be greater than the length of the string");
-    }
-    String clearText = text.substring(0, size - value);
-    String obscuredText = text.substring(size - value);
-    obscuredText = obscuredText.replaceAll(".", replaceChar);
-    return clearText + obscuredText;
-  }
-
-  private String lastXCharsMasked(String text, int value, String replaceChar) {
+  public String lastXCharsClear(String text, int value, String replaceChar) {
     int size = text.length();
     if (value > size) {
       throw new IllegalArgumentException("Value cannot be greater than the length of the string");
@@ -56,7 +45,18 @@ public class MaskDataSerializer extends JsonSerializer {
     return obscuredText + clearText;
   }
 
-  private String firstXCharsClear(String text, int value, String replaceChar) {
+  public String lastXCharsMasked(String text, int value, String replaceChar) {
+    int size = text.length();
+    if (value > size) {
+      throw new IllegalArgumentException("Value cannot be greater than the length of the string");
+    }
+    String clearText = text.substring(0, size - value);
+    String obscuredText = text.substring(size - value);
+    obscuredText = obscuredText.replaceAll(".", replaceChar);
+    return clearText + obscuredText;
+  }
+
+  public String firstXCharsClear(String text, int value, String replaceChar) {
     int size = text.length();
     if (value > size) {
       throw new IllegalArgumentException("Value cannot be greater than the length of the string");
@@ -67,7 +67,7 @@ public class MaskDataSerializer extends JsonSerializer {
     return clearText + obscuredText;
   }
 
-  private String firstXCharsMasked(String text, int value, String replaceChar) {
+  public String firstXCharsMasked(String text, int value, String replaceChar) {
     int size = text.length();
     if (value > size) {
       throw new IllegalArgumentException("Value cannot be greater than the length of the string");
